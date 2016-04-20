@@ -13,5 +13,14 @@ def hex(text):
     return re.match(r'^[0-9A-F]+$', text)
 
 
-def word(text, *args):
+def word(text):
     return re.match(r'^\w*[-]*[a-z]+$', text)
+
+
+def words(text, **kwargs):
+    count = kwargs.get('count')
+    results = re.findall(r'\w*[-]*[a-zA-Z]+', text)
+    if kwargs:
+        return count == len(results)
+    else:
+        return results != []
