@@ -18,9 +18,12 @@ def word(text):
 
 
 def words(text, **kwargs):
-    count = kwargs.get('count')
     results = re.findall(r'\w*[-]*[a-zA-Z]+', text)
     if kwargs:
-        return count == len(results)
+        return kwargs.get('count') == len(results)
     else:
         return results != []
+
+
+def phone_number(nums):
+    return re.match(r'\(*\d{3}\)*[-\s\.]*\d{3}[-\s\.]*\d{4}', nums)

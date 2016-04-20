@@ -68,22 +68,22 @@ def test_words():
     assert not v.words("raggggg hammer dog", count=1)
     assert not v.words("18-wheeler tarbox", count=3)
 
-#
-# @xfail
-# def test_phone_numbers():
-#     """US phone numbers only."""
-#
-#     assert v.phone_number("919-555-1212")
-#     assert v.phone_number("(919) 555-1212")
-#     assert v.phone_number("9195551212")
-#     assert v.phone_number("919.555.1212")
-#     assert v.phone_number("919 555-1212")
-#     assert not v.phone_number("")
-#     assert not v.phone_number("555-121")
-#     assert not v.phone_number("1212")
-#     assert not v.phone_number("mobile")
-#
-#
+
+@xfail
+def test_phone_numbers():
+    """US phone numbers only."""
+
+    assert v.phone_number("919-555-1212")
+    assert v.phone_number("(919) 555-1212")
+    assert v.phone_number("9195551212")
+    assert v.phone_number("919.555.1212")
+    assert v.phone_number("919 555-1212")
+    assert not v.phone_number("")
+    assert not v.phone_number("555-121")
+    assert not v.phone_number("1212")
+    assert not v.phone_number("mobile")
+
+
 # @xfail
 # def test_money():
 #     """We are just concerned with dollars here."""
