@@ -45,5 +45,11 @@ def zipcode(zc):
 
 
 def date(date):
-    
-    pass
+    date_dict = {}
+    try:
+        date_dict["year"] = int(re.search(r'(\d{4})', date).group())
+        dict_date["month"] = int(re.search(r'^([0-9]{1,2})\D|\D([0-9]{1,2})\D', date).group())
+        date_dict["day"] = int(re.search(r'(?=....\D([0-9]{1,2}))', date).group())
+        return date_dict
+    except:
+        return False

@@ -1,73 +1,73 @@
-# import pytest
-# xfail = pytest.mark.xfail
-#
-# import textminer.validator as v
-#
-#
-# @xfail
-# def test_binary_numbers():
-#     assert v.binary("0")
-#     assert v.binary("1")
-#     assert v.binary("01")
-#     assert v.binary("10")
-#     assert v.binary("1110100010")
-#     assert not v.binary("")
-#     assert not v.binary("911")
-#
-#
-# @xfail
-# def test_binary_even():
-#     """String must be a binary number and be even."""
-#
-#     assert v.binary_even("10")
-#     assert v.binary_even("1110100010")
-#     assert not v.binary_even("1011")
-#
-#
-# @xfail
-# def test_hexadecimal():
-#     assert v.hex("CAFE")
-#     assert v.hex("9F9")
-#     assert v.hex("123")
-#     assert v.hex("6720EB3A9D1")
-#     assert not v.hex("")
-#     assert not v.hex("COFFEE")
-#
-#
-# @xfail
-# def test_word():
-#     assert v.word("hello")
-#     assert v.word("wonderful")
-#     assert v.word("zyggon")
-#     assert v.word("horse-dagger")
-#     assert v.word("18-wheeler")
-#     assert not v.word("")
-#     assert not v.word("12")
-#     assert not v.word("!!!")
-#     assert not v.word("bar*us")
-#
-#
-# @xfail
-# def test_words():
-#     """words can take an optional count argument. In case it exists, the text
-#     must match that number of words."""
-#     assert v.words("hello")
-#     assert v.words("hello world")
-#     assert v.words("raggggg hammer dog")
-#     assert v.words("18-wheeler tarbox")
-#     assert v.words("hello", count=1)
-#     assert v.words("hello world", count=2)
-#     assert v.words("raggggg hammer dog", count=3)
-#     assert v.words("18-wheeler tarbox", count=2)
-#     assert not v.words("")
-#     assert not v.words("12")
-#     assert not v.words("hey !!!", count=2)
-#     assert not v.words("bar*us w!zard", count=2)
-#     assert not v.words("hello", count=2)
-#     assert not v.words("hello world", count=3)
-#     assert not v.words("raggggg hammer dog", count=1)
-#     assert not v.words("18-wheeler tarbox", count=3)
-#
+import pytest
+xfail = pytest.mark.xfail
+
+import textminer.validator as v
+
+
+@xfail
+def test_binary_numbers():
+    assert v.binary("0")
+    assert v.binary("1")
+    assert v.binary("01")
+    assert v.binary("10")
+    assert v.binary("1110100010")
+    assert not v.binary("")
+    assert not v.binary("911")
+
+
+@xfail
+def test_binary_even():
+    """String must be a binary number and be even."""
+
+    assert v.binary_even("10")
+    assert v.binary_even("1110100010")
+    assert not v.binary_even("1011")
+
+
+@xfail
+def test_hexadecimal():
+    assert v.hex("CAFE")
+    assert v.hex("9F9")
+    assert v.hex("123")
+    assert v.hex("6720EB3A9D1")
+    assert not v.hex("")
+    assert not v.hex("COFFEE")
+
+
+@xfail
+def test_word():
+    assert v.word("hello")
+    assert v.word("wonderful")
+    assert v.word("zyggon")
+    assert v.word("horse-dagger")
+    assert v.word("18-wheeler")
+    assert not v.word("")
+    assert not v.word("12")
+    assert not v.word("!!!")
+    assert not v.word("bar*us")
+
+
+@xfail
+def test_words():
+    """words can take an optional count argument. In case it exists, the text
+    must match that number of words."""
+    assert v.words("hello")
+    assert v.words("hello world")
+    assert v.words("raggggg hammer dog")
+    assert v.words("18-wheeler tarbox")
+    assert v.words("hello", count=1)
+    assert v.words("hello world", count=2)
+    assert v.words("raggggg hammer dog", count=3)
+    assert v.words("18-wheeler tarbox", count=2)
+    assert not v.words("")
+    assert not v.words("12")
+    assert not v.words("hey !!!", count=2)
+    assert not v.words("bar*us w!zard", count=2)
+    assert not v.words("hello", count=2)
+    assert not v.words("hello world", count=3)
+    assert not v.words("raggggg hammer dog", count=1)
+    assert not v.words("18-wheeler tarbox", count=3)
+
 #
 # @xfail
 # def test_phone_numbers():
